@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Spare Parts Catalogue</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Interactive Spare Parts Catalogue</h1>
+    <p>Click a balloon on the image or a row in the table to highlight the matching part.</p>
+  </header>
+
+  <main class="catalogue">
+    <section class="image-panel" aria-labelledby="image-title">
+      <h2 id="image-title">Machine Assembly View</h2>
+      <div class="image-wrap" id="imageWrap">
+        <img
+          id="partsImage"
+          src="machine-placeholder.svg"
+          alt="Machine with parts shown"
+        />
+        <svg id="balloonLayer" viewBox="0 0 1000 650" preserveAspectRatio="none" aria-label="Part index balloons"></svg>
+      </div>
+    </section>
+
+    <aside class="parts-panel" aria-labelledby="parts-title">
+      <h2 id="parts-title">Parts List</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Index No.</th>
+              <th>Part Number</th>
+              <th>Qty</th>
+            </tr>
+          </thead>
+          <tbody id="partsTableBody"></tbody>
+        </table>
+      </div>
+    </aside>
+  </main>
+
+  <template id="balloonTemplate">
+    <g class="balloon" role="button" tabindex="0">
+      <circle r="18"></circle>
+      <text text-anchor="middle" dominant-baseline="central"></text>
+    </g>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
